@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="ComparasonTest">
+	<parameter name="category" value="Каталог" />
+	<parameter name="groupOfProducts" value="Компьютеры" />
+	<parameter name="subgroupOfProducts" value="Комплектующие" />
+	<parameter name="products" value="Оперативная память" />
+	<parameter name="produser" value="Dell" />
+	<test name="findAndCompareProducts">
+		<classes>
+			<class name="testClasses.ComparasonTest">
+
+			</class>
+		</classes>
+	</test>
+
+</suite>
