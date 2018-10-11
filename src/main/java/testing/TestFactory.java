@@ -4,45 +4,83 @@ import org.openqa.selenium.WebDriver;
 
 import pagesObject.CatalogPage;
 import pagesObject.ComparasonPage;
-import pagesObject.GoodsPage;
+import pagesObject.ProductsPage;
 import pagesObject.StartPage;
 
+/**
+ * class of making up processes in every page
+ * 
+ * @author User
+ *
+ */
 public class TestFactory {
 
 	private WebDriver driver;
-	
+
+	/**
+	 * Create the instance of Test factory which contains instance of WebDriver
+	 * as a parameter
+	 * 
+	 * @param driver
+	 */
 	public TestFactory(WebDriver driver) {
-		this.driver=driver;
+		this.driver = driver;
 	}
-	
+
 	public WebDriver getDriver() {
 		return driver;
 	}
-	
+
 	public void setDriver(WebDriver driver) {
-		this.driver=driver;
+		this.driver = driver;
 	}
-	
+
+	/**
+	 * method startup sequence on the main page onliner.by, basic theme enter as
+	 * a parameter
+	 * 
+	 * @param param
+	 */
 	public void getCatalogPage(String param) {
 		StartPage page = new StartPage(this.getDriver());
 		page.goToCategoryPage(param);
 	}
-	
+
+	/**
+	 * method startup sequence on the catalog page onliner.by, category of
+	 * products, group of products and products enter as a parameter
+	 * 
+	 * @param param0
+	 * @param param1
+	 * @param param2
+	 */
 	public void getGoodsPage(String param0, String param1, String param2) {
 		CatalogPage page = new CatalogPage(this.getDriver());
-		page.showGroupSOfCategories(param0);
-		page.showCategories(param1);
+		page.showCategories(param0);
+		page.showGroupsOfProducts(param1);
 		page.goToCategoryPage(param2);
 	}
-	
-	public void getComparasonPage(String param) throws InterruptedException {
-		GoodsPage page = new GoodsPage(this.getDriver());
+
+	/**
+	 * method startup sequence on the products page onliner.by, name of producer
+	 * enter as a parameter
+	 * 
+	 * @param param
+	 */
+	public void getComparasonPage(String param) {
+		ProductsPage page = new ProductsPage(this.getDriver());
 		page.showAllProducers();
 		page.goToCategoryPage(param);
 		page.setTwoComparasonGoods(param);
 		page.goToComparasonPage();
 	}
-	
+
+	/**
+	 * method startup sequence on the comparison page onliner.by and return
+	 * result of product advantage at a string form
+	 * 
+	 * @return
+	 */
 	public String compareProducts() {
 		ComparasonPage page = new ComparasonPage(this.getDriver());
 		return page.ShowComparasonResult();

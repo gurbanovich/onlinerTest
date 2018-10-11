@@ -7,10 +7,23 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+/**
+ * test class contains after and before methods
+ * 
+ * @author User
+ *
+ */
 public class BaseTest {
 
+	/**
+	 * initialize static field by instance of Firefox web driver
+	 */
 	protected static WebDriver driver = new FirefoxDriver();
 
+	/**
+	 * method is performed before test and sets implicit wait for web driver and
+	 * loads start web page onliner.by
+	 */
 	@BeforeMethod
 	public static void loadDriver() {
 		driver.manage().window().maximize();
@@ -18,8 +31,11 @@ public class BaseTest {
 		driver.navigate().to("https://onliner.by/");
 	}
 
+	/**
+	 * method is performed after test and finishes web driver work
+	 */
 	@AfterMethod
-	public void cleseDriver() {
+	public void closeDriver() {
 		if (driver != null)
 			driver.quit();
 	}
