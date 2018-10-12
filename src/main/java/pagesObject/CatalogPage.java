@@ -41,7 +41,7 @@ public class CatalogPage extends AbstractPage {
 	 * method click to link for showing categories of groups which enter as a
 	 * parameter
 	 * 
-	 * @param category
+	 * @param category - category of products
 	 */
 	public void showCategories(String category) {
 		this.getDriver().findElement(By.xpath(String.format(categoryLocator, category))).click();
@@ -51,7 +51,7 @@ public class CatalogPage extends AbstractPage {
 	 * method click to link for showing groups of products which enter as a
 	 * parameter
 	 * 
-	 * @param category
+	 * @param category - group of products
 	 */
 	public void showGroupsOfProducts(String category) {
 		this.getDriver().findElement(By.xpath(String.format(groupsLocator, category))).click();
@@ -60,6 +60,8 @@ public class CatalogPage extends AbstractPage {
 	/**
 	 * method click to link for transition to page of certain group of products
 	 * which enter as a parameter
+	 * 
+	 * @param category - product
 	 */
 	@Override
 	public void goToCategoryPage(String category) {

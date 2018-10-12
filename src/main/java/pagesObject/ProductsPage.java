@@ -59,7 +59,7 @@ public class ProductsPage extends AbstractPage {
 	 * contains a explicit wait for loading products according to choose
 	 * criterion which enter as a parameter
 	 * 
-	 * @param category
+	 * @param category - name of criterion
 	 */
 	public void setTwoComparasonGoods(String category) {
 		WebDriverWait wait = new WebDriverWait(this.getDriver(), 10, 5000);
@@ -80,6 +80,8 @@ public class ProductsPage extends AbstractPage {
 	/**
 	 * method click to link for choosing certain criterion of products which
 	 * enter as a parameter
+	 * 
+	 * @param category - name of criterion
 	 */
 	@Override
 	public void goToCategoryPage(String category) {

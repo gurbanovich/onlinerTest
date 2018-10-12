@@ -30,7 +30,7 @@ public class StartPage extends AbstractPage {
 	 * method click to link for transition to page of basic theme which enter as
 	 * a parameter
 	 * 
-	 * @param category
+	 * @param category - theme of next page
 	 */
 	@Override
 	public void goToCategoryPage(String category) {

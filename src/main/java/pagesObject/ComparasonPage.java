@@ -63,8 +63,8 @@ public class ComparasonPage {
 	 * of fields of advantage parameters as a parameter, List of fields as a
 	 * return object
 	 * 
-	 * @param accentField
-	 * @return
+	 * @param accentField - locator of advantage parameters field
+	 * @return - list of fields
 	 */
 	private List<WebElement> getAccentField(By accentField) {
 		return this.getDriver().findElements(accentField);
@@ -74,8 +74,8 @@ public class ComparasonPage {
 	 * method count fields of advantage parameters and return its number. By
 	 * instance of fields of advantage parameters as a parameter
 	 * 
-	 * @param accentField
-	 * @return
+	 * @param accentField - c
+	 * @return - number of fields
 	 */
 	private int countAccentField(By accentField) {
 		return getAccentField(accentField).size();
@@ -85,8 +85,8 @@ public class ComparasonPage {
 	 * method return full name of comparable product. By instance of fields of
 	 * product name as a parameter
 	 * 
-	 * @param nameLocator
-	 * @return
+	 * @param nameLocator - locator of name field
+	 * @return - name of product
 	 */
 	private String getProductName(By nameLocator) {
 		return this.getDriver().findElement(nameLocator).getText();
@@ -96,7 +96,7 @@ public class ComparasonPage {
 	 * method compare numbers of fields of advantage parameters and return
 	 * result of product advantage at a string form
 	 * 
-	 * @return
+	 * @return - result of compare of products
 	 */
 	public String ShowComparasonResult() {
 		String result;
