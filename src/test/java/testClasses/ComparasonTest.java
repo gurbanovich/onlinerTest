@@ -1,5 +1,8 @@
 package testClasses;
 
+import static org.testng.Assert.assertEquals;
+
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -32,13 +35,17 @@ public class ComparasonTest extends BaseTest {
 	 */
 	@Test
 	@Parameters({ "category", "groupOfProducts", "subgroupOfProducts", "products", "produser" })
-	public static void findAndCompareProducts(String category, String groupOfProducts, String subgroupOfProducts,
-			String products, String produser) {
+	public static void findAndCompareProducts( String category,  String groupOfProducts,
+			 String subgroupOfProducts,  String products,  String produser) {
+		String actual = null;
+		String expected = "Dell 2x8GB DDR4 PC4-19200 [A8711887] has an advantage over Dell 8GB DDR3 PC3-12800 370-23455";
 		TestFactory factory = new TestFactory(driver);
 		factory.getCatalogPage(category);
 		factory.getGoodsPage(groupOfProducts, subgroupOfProducts, products);
 		factory.getComparasonPage(produser);
-		System.out.println(factory.compareProducts());
+		actual = factory.compareProducts();
+		assertEquals(actual, expected);
+		// System.out.println(factory.compareProducts());
 	}
 
 }

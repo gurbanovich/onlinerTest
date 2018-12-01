@@ -26,8 +26,8 @@ public class BaseTest {
 	 */
 	@BeforeMethod
 	public static void loadDriver() {
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().fullscreen();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.navigate().to("https://onliner.by/");
 	}
 

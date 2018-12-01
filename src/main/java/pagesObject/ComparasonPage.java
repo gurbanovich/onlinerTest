@@ -98,7 +98,7 @@ public class ComparasonPage {
 	 * 
 	 * @return - result of compare of products
 	 */
-	public String ShowComparasonResult() {
+	public String showComparasonResult() {
 		String result;
 		int firstProductFields = countAccentField(firstProductAccentField);
 		int secondProductFields = countAccentField(secondProductAccentField);

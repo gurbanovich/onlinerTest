@@ -85,7 +85,7 @@ public class ProductsPage extends AbstractPage {
 	 */
 	@Override
 	public void goToCategoryPage(String category) {
-		WebDriverWait wait = new WebDriverWait(this.getDriver(), 5, 500);
+		WebDriverWait wait = new WebDriverWait(this.getDriver(), 10, 500);
 		WebElement element = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath(String.format(produserLocator, category))));
 		element.click();

@@ -83,6 +83,6 @@ public class TestFactory {
 	 */
 	public String compareProducts() {
 		ComparasonPage page = new ComparasonPage(this.getDriver());
-		return page.ShowComparasonResult();
+		return page.showComparasonResult();
 	}
 }
